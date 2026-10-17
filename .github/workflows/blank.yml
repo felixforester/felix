@@ -1,4 +1,4 @@
-name: Temporary runner debugging - 1
+name: Temporary runner debugging - 21
 
 on:
   workflow_dispatch:
@@ -7,11 +7,11 @@ permissions:
   contents: read
 
 concurrency:
-  group: tailscale-work-1
+  group: tailscale-work-21
   cancel-in-progress: false
 
 env:
-  TS_HOSTNAME: work-1
+  TS_HOSTNAME: work-21
 
 jobs:
   debug:
@@ -62,7 +62,7 @@ jobs:
           ACTUAL_DNS="$(tailscale status --json |
             python3 -c 'import json,sys; print(json.load(sys.stdin)["Self"]["DNSName"].rstrip("."))')"
 
-          EXPECTED_DNS="${TS_HOSTNAME}.tail7244e2.ts.net"
+          EXPECTED_DNS="${TS_HOSTNAME}.tail5244e2.ts.net"
 
           if [ "$ACTUAL_DNS" != "$EXPECTED_DNS" ]; then
             echo "::error::Expected $EXPECTED_DNS but received $ACTUAL_DNS"

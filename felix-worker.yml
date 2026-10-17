@@ -62,7 +62,7 @@ jobs:
           ACTUAL_DNS="$(tailscale status --json |
             python3 -c 'import json,sys; print(json.load(sys.stdin)["Self"]["DNSName"].rstrip("."))')"
 
-          EXPECTED_DNS="${TS_HOSTNAME}.tail5244e2.ts.net"
+          EXPECTED_DNS="${TS_HOSTNAME}.tail7244e2.ts.net"
 
           if [ "$ACTUAL_DNS" != "$EXPECTED_DNS" ]; then
             echo "::error::Expected $EXPECTED_DNS but received $ACTUAL_DNS"

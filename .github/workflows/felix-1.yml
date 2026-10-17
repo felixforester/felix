@@ -7,11 +7,11 @@ permissions:
   contents: read
 
 concurrency:
-  group: tailscale-work-21
+  group: tailscale-felix-1
   cancel-in-progress: false
 
 env:
-  TS_HOSTNAME: work-21
+  TS_HOSTNAME: felix-1
 
 jobs:
   debug:
